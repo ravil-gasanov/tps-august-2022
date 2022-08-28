@@ -28,9 +28,11 @@ all_predictors = train.columns[train.columns != y_label]
 categorical = ['attribute_0', 'attribute_1']
 numeric = [pred for pred in all_predictors if (pred not in categorical and pred not in ['id', 'product_code'])]
 
-# best according to logreg importance (source: https://www.kaggle.com/code/ambrosm/tpsaug22-eda-which-makes-sense)
+# best according to logreg importance
+# source: https://www.kaggle.com/code/ambrosm/tpsaug22-eda-which-makes-sense
 best_predictors = ['loading', 'attribute_3', 'measurement_2', 'measurement_4', 'measurement_17']
-# source: eda
+
+# source: https://www.kaggle.com/code/ambrosm/tpsaug22-eda-which-makes-sense
 indicative_nan_cols = ['measurement_3', 'measurement_5']
 
 X, y = train.loc[:, all_predictors], train[y_label]
