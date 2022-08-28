@@ -29,7 +29,7 @@ categorical = ['attribute_0', 'attribute_1']
 numeric = [pred for pred in all_predictors if (pred not in categorical and pred not in ['id', 'product_code'])]
 
 best_predictors = ['loading', 'attribute_3', 'measurement_2', 'measurement_4', 'measurement_17']
-indicative_nan_cols = ['measurement_3', 'measurement_5', 'measurement_9']
+indicative_nan_cols = ['measurement_3', 'measurement_5']
 
 X, y = train.loc[:, all_predictors], train[y_label]
 
@@ -76,7 +76,7 @@ gkf = GroupKFold(n_splits=5)
 gridcv = GridSearchCV(estimator = pipe, param_grid = hyperparams, cv = gkf, scoring = 'roc_auc')
 gridcv.fit(X, y, groups = X['product_code'])
 
-print(gridcv.best_score_)
+print(gridcv.best_score_) # 0.5912
 
 best_model = gridcv.best_estimator_
 best_model.fit(X, y)
