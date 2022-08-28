@@ -54,15 +54,6 @@ prep = ColumnTransformer(
     ]
 )
 
-models = [
-    ("xgb", XGBClassifier()),
-    ("lgbm", LGBMClassifier()),
-    ("rfc", RandomForestClassifier()),
-    ("lda", LinearDiscriminantAnalysis()),
-    ("qda", QuadraticDiscriminantAnalysis()),
-    ("logreg", LogisticRegression())
-]
-
 model = ("logreg", LogisticRegression())
 
 hyperparams = {
