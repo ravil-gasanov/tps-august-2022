@@ -28,6 +28,7 @@ all_predictors = train.columns[train.columns != y_label]
 categorical = ['attribute_0', 'attribute_1']
 numeric = [pred for pred in all_predictors if (pred not in categorical and pred not in ['id', 'product_code'])]
 
+# best according to logreg importance
 best_predictors = ['loading', 'attribute_3', 'measurement_2', 'measurement_4', 'measurement_17']
 indicative_nan_cols = ['measurement_3', 'measurement_5']
 
